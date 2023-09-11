@@ -1,2 +1,3 @@
 cmudict
 pandas # just used for display purposes
+nltk
