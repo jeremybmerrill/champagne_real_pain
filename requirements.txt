@@ -1,3 +1,8 @@
 cmudict
-pandas # just used for display purposes
 nltk
+gensim
+
+# used for display/explanatory purposes, but not the 'meat' of the analysis
+pandas
+scikit-learn
+matplotlib
