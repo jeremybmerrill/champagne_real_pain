@@ -1,0 +1,7 @@
+project:
+  type: website
+  render:
+    - champagnerealpain.ipynb
+website:
+  google-analytics:
+      tracking-id: "G-0K33PQMW1P"
