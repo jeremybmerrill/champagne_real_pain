@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jeremy B. Merrill">
-<meta name="dcterms.date" content="2023-09-20">
+<meta name="dcterms.date" content="2023-09-21">
 
 <title>Champagne for my real friends</title>
 <style>
@@ -135,7 +135,7 @@ gtag('config', 'G-0K33PQMW1P', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 20, 2023</p>
+        <p class="date">September 21, 2023</p>
       </div>
     </div>
     
@@ -160,17 +160,17 @@ gtag('config', 'G-0K33PQMW1P', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#a-more-robust-rubric-for-champagne-phrases" id="toc-a-more-robust-rubric-for-champagne-phrases" class="nav-link" data-scroll-target="#a-more-robust-rubric-for-champagne-phrases">A more robust rubric for <code>champagne phrases</code></a>
   <ul class="collapse">
-  <li><a href="#champagne-words-and-pain-words-have-to-be-nouns" id="toc-champagne-words-and-pain-words-have-to-be-nouns" class="nav-link" data-scroll-target="#champagne-words-and-pain-words-have-to-be-nouns">Champagne words and pain words have to be nouns</a></li>
+  <li><a href="#pain-words-and-champagne-compound-words-have-to-be-nouns" id="toc-pain-words-and-champagne-compound-words-have-to-be-nouns" class="nav-link" data-scroll-target="#pain-words-and-champagne-compound-words-have-to-be-nouns">Pain words and champagne compound words have to be nouns</a></li>
   <li><a href="#ignore-very-rare-words" id="toc-ignore-very-rare-words" class="nav-link" data-scroll-target="#ignore-very-rare-words">Ignore very rare words</a></li>
   <li><a href="#more-permissive-vowel-matching" id="toc-more-permissive-vowel-matching" class="nav-link" data-scroll-target="#more-permissive-vowel-matching">More permissive vowel matching</a></li>
-  <li><a href="#champagne-words-are-positive-pain-words-are-negative" id="toc-champagne-words-are-positive-pain-words-are-negative" class="nav-link" data-scroll-target="#champagne-words-are-positive-pain-words-are-negative">Champagne words are positive, pain words are negative</a></li>
+  <li><a href="#champagne-compound-words-are-positive-pain-words-are-negative" id="toc-champagne-compound-words-are-positive-pain-words-are-negative" class="nav-link" data-scroll-target="#champagne-compound-words-are-positive-pain-words-are-negative">Champagne compound words are positive, pain words are negative</a></li>
   </ul></li>
   <li><a href="#implementing-our-final-rubric-for-champagne-phrases" id="toc-implementing-our-final-rubric-for-champagne-phrases" class="nav-link" data-scroll-target="#implementing-our-final-rubric-for-champagne-phrases">Implementing our final rubric for <code>champagne phrases</code></a></li>
   <li><a href="#for-my-faux-sham-mid-meh-and-bad-friends" id="toc-for-my-faux-sham-mid-meh-and-bad-friends" class="nav-link" data-scroll-target="#for-my-faux-sham-mid-meh-and-bad-friends">____ for my faux, sham, mid, meh and bad friends</a></li>
   <li><a href="#a-worked-example" id="toc-a-worked-example" class="nav-link" data-scroll-target="#a-worked-example">A worked example</a></li>
   <li><a href="#future-enhancements" id="toc-future-enhancements" class="nav-link" data-scroll-target="#future-enhancements">Future enhancements</a>
   <ul class="collapse">
-  <li><a href="#use-a-for-singular-pain-words" id="toc-use-a-for-singular-pain-words" class="nav-link" data-scroll-target="#use-a-for-singular-pain-words">Use “a” for singular pain words</a></li>
+  <li><a href="#use-a-for-pain-words-that-are-count-nouns" id="toc-use-a-for-pain-words-that-are-count-nouns" class="nav-link" data-scroll-target="#use-a-for-pain-words-that-are-count-nouns">Use “a” for pain words that are count nouns</a></li>
   <li><a href="#metrics-for-my-real-friends" id="toc-metrics-for-my-real-friends" class="nav-link" data-scroll-target="#metrics-for-my-real-friends">Metrics for my real friends</a></li>
   <li><a href="#better-phonology" id="toc-better-phonology" class="nav-link" data-scroll-target="#better-phonology">Better phonology</a></li>
   <li><a href="#improve-positivenegative-classification" id="toc-improve-positivenegative-classification" class="nav-link" data-scroll-target="#improve-positivenegative-classification">Improve positive/negative classification</a></li>
@@ -246,7 +246,7 @@ What is classical NLP? Why not use ChatGPT?
 </div>
 </div>
 <p>If we’re gonna find more slogans like <em>champagne for my real friends, real pain for my sham friends</em>, we’ll have to find words like <em>champagne</em> that <strong>sound</strong> like compounds of a word like <em>sham</em> and a word like <em>pain</em> – regardless of how they’re spelled.</p>
-<p>Another example of what we’re looking for is <em>focus for my real friends, real cuss for my faux friends</em>. In this example, <em>focus</em> is our <code>champagne word</code>, and it’s composed of <em>faux</em> (a <code>sham word</code>) and <em>cuss</em> (a <code>pain word</code>).</p>
+<p>Another example of what we’re looking for is <em>focus for my real friends, real cuss for my faux friends</em>. In this example, <em>focus</em> is our <code>champagne compound word</code>, and it’s composed of <em>faux</em> (a <code>sham word</code>) and <em>cuss</em> (a <code>pain word</code>).</p>
 <p>Look below to see what the pronunciation of <em>champagne</em> looks like, and how it’s made up of the pronunciations of <em>sham</em> and <em>pain</em>.</p>
 <div class="cell" data-execution_count="1">
 <details>
@@ -266,13 +266,13 @@ pronunciation of pain is [['P', 'EY1', 'N']]</code></pre>
 </section>
 <section id="an-initial-rubric-for-a-champagne-phrase" class="level2">
 <h2 class="anchored" data-anchor-id="an-initial-rubric-for-a-champagne-phrase">An initial rubric for a <code>champagne phrase</code></h2>
-<p>A <code>champagne phrase</code>: <code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne word</code>.</p>
+<p>A <code>champagne phrase</code>: <code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne compoud</code>.</p>
 <p>We’ll revise this later, but this is enough to try to get started with generating <code>champagne phrases.</code></p>
 </section>
 <section id="implementing-our-initial-rubric." class="level2">
 <h2 class="anchored" data-anchor-id="implementing-our-initial-rubric.">Implementing our initial rubric.</h2>
 <p>Let’s use “faux” as our <code>sham word</code>. So we’re looking for phrases like <em>faux pain for my real friends, real pain for my faux friends</em>… except where <em>faux pain</em> is a real word.</p>
-<p>So, now, let’s find our <code>champagne word</code>s, but starting with the sound “faux”.</p>
+<p>So, now, let’s find our <code>champagne compound word</code>s, but starting with the sound “faux”.</p>
 <section id="cleaning-up-the-pronunciations" class="level3">
 <h3 class="anchored" data-anchor-id="cleaning-up-the-pronunciations">Cleaning up the pronunciations</h3>
 <p>The pronunciations in our example above match <em>almost</em> exactly.</p>
@@ -298,7 +298,7 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 </div>
 <div class="cell" data-execution_count="4">
 <details>
-<summary>def find_candidate_champagne_words(word_prons):</summary>
+<summary>def find_candidate_champagne_compound_words(word_prons):</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Due to an error in the CMU pronouncing dictionary, we have to specify that _faux_ </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># is actually pronounced like _foe_. (Not like _fox_.)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>SHAM_WORD_OVERRIDE <span class="op">=</span> <span class="st">"foe"</span> <span class="co"># None or "foe" # in case the pronunciation of the TARGET_WORD is wrong, as it oddly is for "faux"</span></span>
@@ -306,9 +306,9 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>HOW_MANY_TO_SHOW <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_candidate_champagne_words(word_prons, sham_syllable<span class="op">=</span>SHAM_SYLLABLE):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_candidate_champagne_compound_words(word_prons, sham_syllable<span class="op">=</span>SHAM_SYLLABLE):</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    champagne words have to start with the same sounds as the cham word (but can't be identical, it has to be longer!)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    champagne compound words have to start with the same sounds as the cham word (but can't be identical, it has to be longer!)</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    word, prons <span class="op">=</span> word_prons <span class="co"># destructuring</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">any</span>([                                              <span class="co"># candidate words must:</span></span>
@@ -316,13 +316,13 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>               pron <span class="op">!=</span> sham_syllable                          <span class="co"># but be different</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> pron <span class="kw">in</span> prons])</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>nouns_starting_with_sham_word <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(find_candidate_champagne_words, word_pronunciations.items()))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Here are words (our candidate champagne words) that start with </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(SHAM_SYLLABLE))</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>nouns_starting_with_sham_word <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(find_candidate_champagne_compound_words, word_pronunciations.items()))</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Here are words (our candidate champagne compound words) that start with </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(SHAM_SYLLABLE))</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> noun, prons <span class="kw">in</span> nouns_starting_with_sham_word[:HOW_MANY_TO_SHOW]:</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" - </span><span class="sc">{</span>noun<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prons<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Here are words (our candidate champagne words) that start with ('F', 'OW')
+<pre><code>Here are words (our candidate champagne compound words) that start with ('F', 'OW')
  - faucette: [('F', 'OW', 'S', 'EH', 'T')]
  - faucheux: [('F', 'OW', 'SH', 'OW')]
  - faupel: [('F', 'OW', 'P', 'EH', 'L')]
@@ -343,8 +343,8 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 </section>
 <section id="finding-pain-words" class="level3">
 <h3 class="anchored" data-anchor-id="finding-pain-words">Finding pain words</h3>
-<p>For each of our candidate <code>champagne word</code>s (<em>folklore</em>, <em>folder</em>, etc.), we’re going to check and see if it contains a <code>pain word</code>. That is, we’re asking if <em>klore</em> or <em>lder</em> are words – even if they’re spelled differently.</p>
-<p>We do this really naively, by looping through every pronunciation of every single word in the dictionary, to see if matches the second half of the pronunciation of our candidate <code>champagne word</code>.</p>
+<p>For each of our candidate <code>champagne compound word</code>s (<em>folklore</em>, <em>folder</em>, etc.), we’re going to check and see if it contains a <code>pain word</code>. That is, we’re asking if <em>klore</em> or <em>lder</em> are words – even if they’re spelled differently.</p>
+<p>We do this really naively, by looping through every pronunciation of every single word in the dictionary, to see if matches the second half of the pronunciation of our candidate <code>champagne compound word</code>.</p>
 <div class="cell" data-execution_count="5">
 <details>
 <summary>{} for my real friends, real {} for my {} friends</summary>
@@ -360,7 +360,7 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> count_so_far <span class="op">&lt;=</span> HOW_MANY_TO_SHOW: </span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> for my real friends, real </span><span class="sc">{}</span><span class="st"> for my </span><span class="sc">{}</span><span class="st"> friends"</span>.<span class="bu">format</span>(candidate_word, word, SHAM_WORD))</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> count_so_far <span class="op">&gt;</span> HOW_MANY_TO_SHOW:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"... ({count_so_far - HOW_MANY_TO_SHOW} additional examples hidden)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"... (</span><span class="sc">{</span>count_so_far <span class="op">-</span> HOW_MANY_TO_SHOW<span class="sc">}</span><span class="ss"> additional examples hidden)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>faucette for my real friends, real set for my faux friends
@@ -378,11 +378,11 @@ foal for my real friends, real ohl for my faux friends
 foal for my real friends, real ol' for my faux friends
 foal for my real friends, real ole for my faux friends
 foale for my real friends, real ohl for my faux friends
-... ({count_so_far - HOW_MANY_TO_SHOW} additional examples hidden)</code></pre>
+... (224 additional examples hidden)</code></pre>
 </div>
 </div>
 <p>Very cool! Those are kind of right.</p>
-<p><em>focusing for my real friends, real kissing for my faux friends</em> has got a ring to it, but kind of has the wrong valence. Who wishes kisses on their faux friends? Our <code>pain word</code> should be negative; and the <code>champagne word</code> should be positive, or at least neutral.</p>
+<p><em>focusing for my real friends, real kissing for my faux friends</em> has got a ring to it, but kind of has the wrong valence. Who wishes kisses on their faux friends? Our <code>pain word</code> should be negative; and the <code>champagne compound word</code> should be positive, or at least neutral.</p>
 <p>But let’s look closer.</p>
 <ul>
 <li><em>foamy for my real friends, real me for my faux friends</em></li>
@@ -406,12 +406,12 @@ foale for my real friends, real ohl for my faux friends
 <li>overprecise vowel matches mean we miss some slant rhymes that should be ok.</li>
 <li>some of the <code>pain words</code> are actually positive; it doesn’t make sense to wish a real kiss for your faux friends.</li>
 </ul>
-<p>Our initial rubric was that a <code>champagne phrase</code> is <code>sham word</code> and a <code>pain word</code> that, when combined, make a <code>champagne word</code>.</p>
+<p>Our initial rubric was that a <code>champagne phrase</code> is <code>sham word</code> and a <code>pain word</code> that, when combined, make a <code>champagne compound word</code>.</p>
 <p>We can revise that to:</p>
-<p>A <code>champagne phrase</code>: <code>sham word</code> is an adjective and a <code>pain word</code> is a frequent, common noun with a negative meaning that, when their pronunciations are combined (with perhaps a bit of phonological fudging), make a <code>champagne word</code> with positive or neutral meaning.</p>
+<p>A <code>champagne phrase</code>: <code>sham word</code> is an adjective and a <code>pain word</code> is a frequent, common noun with a negative meaning that, when their pronunciations are combined (with perhaps a bit of phonological fudging), make a <code>champagne compound word</code> with positive or neutral meaning.</p>
 <p>Here’s our implementation.</p>
-<section id="champagne-words-and-pain-words-have-to-be-nouns" class="level3">
-<h3 class="anchored" data-anchor-id="champagne-words-and-pain-words-have-to-be-nouns">Champagne words and pain words have to be nouns</h3>
+<section id="pain-words-and-champagne-compound-words-have-to-be-nouns" class="level3">
+<h3 class="anchored" data-anchor-id="pain-words-and-champagne-compound-words-have-to-be-nouns">Pain words and champagne compound words have to be nouns</h3>
 <p>Let’s use Wordnet to filter just to words that are common nouns – excluding adjectives and proper nouns. More specifically, for our purposes, a common noun is a word that has a lemma in WordNet that’s classified as a noun and is lower-cased.</p>
 <p>Wordnet doesn’t include every word, which means we would inadvertantly exclude gems like these,</p>
 <ul>
@@ -429,30 +429,45 @@ foale for my real friends, real ohl for my faux friends
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_common_noun(word):</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    input_lemma <span class="op">=</span> wnl.lemmatize(word, pos<span class="op">=</span><span class="st">'n'</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    wordnet_lemmas <span class="op">=</span> [lemma.name() <span class="cf">for</span> lemma <span class="kw">in</span> wordnet.synsets(word, pos<span class="op">=</span>wordnet.NOUN)[<span class="dv">0</span>].lemmas()]</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_lemma <span class="kw">in</span> wordnet_lemmas <span class="kw">or</span> word <span class="kw">in</span> wordnet_lemmas</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"mecca"</span>)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"dawson"</span>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"ca"</span>)</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"dc"</span>)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"tess"</span>)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"toes"</span>)</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"champagne"</span>)</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"medics"</span>)</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_noun(word):</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">any</span>(synset <span class="cf">for</span> synset <span class="kw">in</span> wordnet.synsets(word, pos<span class="op">=</span>wordnet.NOUN) <span class="cf">if</span> is_common_noun(word)) <span class="kw">or</span> word <span class="kw">in</span> EXTRA_NOUNS</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'mite'</span>)      <span class="co"># testing basic case</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'might'</span>)     <span class="co"># testing words that can be multiple PoS</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'shamrocks'</span>) <span class="co"># testing plurals</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'mites'</span>)     <span class="co"># testing plurals</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'poo'</span>)       <span class="co"># testing manual additions</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_noun(<span class="st">'photographed'</span>)     <span class="co"># testing handling of inflected verbs</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_noun(<span class="st">'focused'</span>)          <span class="co"># testing handling of inflected verbs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">    A word is a common noun (versus a proper noun) if its lemma is lowercase</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    or the word itself is present as a lemma in wordnet.</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    A lemma is a root word with any morphology removed, like `squirrel` is the lemma for "squirrels".</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    For unknown reasons (perhaps a bug), the NLTK implementation of Wordnet's tokenizer returns a lemma</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    of "Te" for "tess" (referring to the element Tellurium), or "Ca" (an abbreviation for California).</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Another noun's lemma (as generated by NLTK's WordNetLemmatizer) isn't contained in Wordnet, but the</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">    raw form of the word itself is. (I don't remember which word). That's why we include `word in wordnet_lemmas`.</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    input_lemma <span class="op">=</span> wnl.lemmatize(word, pos<span class="op">=</span><span class="st">'n'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    wordnet_lemmas <span class="op">=</span> [lemma.name() <span class="cf">for</span> lemma <span class="kw">in</span> wordnet.synsets(word, pos<span class="op">=</span>wordnet.NOUN)[<span class="dv">0</span>].lemmas()]</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_lemma <span class="kw">in</span> wordnet_lemmas <span class="kw">or</span> word <span class="kw">in</span> wordnet_lemmas</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"mecca"</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"dawson"</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"ca"</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"dc"</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_common_noun(<span class="st">"tess"</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"toes"</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"champagne"</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_common_noun(<span class="st">"medics"</span>)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_noun(word):</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">    A word is a noun if it is present in wordnet as a noun AND it is a common noun.</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">any</span>(synset <span class="cf">for</span> synset <span class="kw">in</span> wordnet.synsets(word, pos<span class="op">=</span>wordnet.NOUN) <span class="cf">if</span> is_common_noun(word)) <span class="kw">or</span> word <span class="kw">in</span> EXTRA_NOUNS</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'mite'</span>)      <span class="co"># testing basic case</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'might'</span>)     <span class="co"># testing words that can be multiple PoS</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'shamrocks'</span>) <span class="co"># testing plurals</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'mites'</span>)     <span class="co"># testing plurals</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_noun(<span class="st">'poo'</span>)       <span class="co"># testing manual additions</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_noun(<span class="st">'photographed'</span>)     <span class="co"># testing handling of inflected verbs</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> is_noun(<span class="st">'focused'</span>)          <span class="co"># testing handling of inflected verbs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -669,23 +684,23 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </div>
 </div>
 </section>
-<section id="champagne-words-are-positive-pain-words-are-negative" class="level3">
-<h3 class="anchored" data-anchor-id="champagne-words-are-positive-pain-words-are-negative">Champagne words are positive, pain words are negative</h3>
-<p><em>fomite for my real friends, real might for my faux friends</em> doesn’t really make sense. You want to wish something bad on your faux friends, not something good, like might! And fomites are infection-carrying particles – which we don’t really want to wish on our real friends! So we want to filter our candidate words to ensure that the <code>champagne words</code> are positive and <code>pain words</code> are negative.</p>
+<section id="champagne-compound-words-are-positive-pain-words-are-negative" class="level3">
+<h3 class="anchored" data-anchor-id="champagne-compound-words-are-positive-pain-words-are-negative">Champagne compound words are positive, pain words are negative</h3>
+<p><em>fomite for my real friends, real might for my faux friends</em> doesn’t really make sense. You want to wish something bad on your faux friends, not something good, like might! And fomites are infection-carrying particles – which we don’t really want to wish on our real friends! So we want to filter our candidate words to ensure that the <code>champagne compound words</code> are positive and <code>pain words</code> are negative.</p>
 <p>But the concept of negativity that we’re trying to capture here is really complex.</p>
-<p>This attempt uses GLoVe embeddings. For <code>pain words</code>, it accepts only words that are closer to the average embedding of some negative words (like <em>bad</em>, <em>painful</em>) and some handpicked <code>pain words</code> I particularly like (like <code>tricks</code> and <code>cuss</code>) than to the average embedding of some positive words and some handpicked <code>champagne words</code>. (Champagne words are filtered to be the opposite.)</p>
+<p>This attempt uses GLoVe embeddings. For <code>pain words</code>, it accepts only words that are closer to the average embedding of some negative words (like <em>bad</em>, <em>painful</em>) and some handpicked <code>pain words</code> I particularly like (like <code>tricks</code> and <code>cuss</code>) than to the average embedding of some positive words and some handpicked <code>champagne compound words</code>. (Champagne compound words are filtered to be the opposite.)</p>
 <p>It also doesn’t work perfectly.</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="17">
 <details>
 <summary>classifying with handpicked positive and negative words</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gensim.downloader <span class="im">as</span> gensim_downloader</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'glove_model'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="bu">locals</span>():</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    glove_model <span class="op">=</span> gensim_downloader.load(<span class="st">"glove-wiki-gigaword-200"</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked positive words and champagne words that I like, plus some attempted corrections</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>HANDPICKED_POSITIVE_WORDS <span class="op">=</span> [<span class="st">"positive"</span>, <span class="st">"positivity"</span>, <span class="st">"good"</span>, <span class="st">"healthy"</span>, <span class="st">"safe"</span>, <span class="st">"normal"</span>, <span class="st">"beautiful"</span> ] <span class="co"># "godly", "biblical"]</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>HANDPICKED_CHAMPAGNE_WORDS <span class="op">=</span> [<span class="st">"champagne"</span>, <span class="st">"metrics"</span>, <span class="st">"focus"</span>, <span class="st">"shamrocks"</span>, <span class="st">"photos"</span>, <span class="st">"medics"</span>]</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>POSITIVE_WORDS <span class="op">=</span> HANDPICKED_POSITIVE_WORDS <span class="op">+</span> HANDPICKED_CHAMPAGNE_WORDS <span class="op">+</span> [<span class="st">"kisses"</span>, <span class="st">"jewish"</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked positive words and champagne compound words that I like, plus some attempted corrections</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>HANDPICKED_POSITIVE_WORDS <span class="op">=</span> [<span class="st">"positive"</span>, <span class="st">"positivity"</span>, <span class="st">"good"</span>, <span class="st">"healthy"</span>, <span class="st">"safe"</span>, <span class="st">"normal"</span>, <span class="st">"beautiful"</span>, <span class="st">"pea"</span>] <span class="co"># "godly", "biblical"]</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>HANDPICKED_CHAMPAGNE_COMPOUND_WORDS <span class="op">=</span> [<span class="st">"champagne"</span>, <span class="st">"metrics"</span>, <span class="st">"focus"</span>, <span class="st">"shamrocks"</span>, <span class="st">"photos"</span>, <span class="st">"medics"</span>]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>POSITIVE_WORDS <span class="op">=</span> HANDPICKED_POSITIVE_WORDS <span class="op">+</span> HANDPICKED_CHAMPAGNE_COMPOUND_WORDS <span class="op">+</span> [<span class="st">"kisses"</span>, <span class="st">"jewish"</span>, <span class="st">"midrash"</span>]</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked negative words and pain words that I like</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>HANDPICKED_NEGATIVE_WORDS <span class="op">=</span> [<span class="st">"bad"</span>, <span class="st">"badness"</span>, <span class="st">"evil"</span>, <span class="st">"painful"</span>, <span class="st">"dangerous"</span>, <span class="st">"negative"</span>, <span class="st">"weird"</span>, <span class="st">"ugly"</span>]</span>
@@ -693,7 +708,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>NEGATIVE_WORDS <span class="op">=</span> HANDPICKED_NEGATIVE_WORDS <span class="op">+</span> HANDPICKED_PAIN_WORDS</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="18">
 <details>
 <summary>def is_negative(word)</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked</span></span>
@@ -722,12 +737,12 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (neg_similarity <span class="op">&gt;</span> pos_similarity) <span class="kw">or</span> <span class="op">\</span></span>
 <span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>           ((pos_similarity <span class="op">-</span> neg_similarity) <span class="op">/</span> pos_similarity) <span class="op">&lt;</span> NEGATIVE_SENTIMENT_CUTOFF</span>
 <span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_positive(champagne_word, default<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_positive(champagne_compound_word, default<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="co">    True if `champagne_word`'s cosine-similarity is closer to POSITIVE_WORDS than to NEGATIVE_WORDS, </span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="co">    True if `champagne_compound_word`'s cosine-similarity is closer to POSITIVE_WORDS than to NEGATIVE_WORDS, </span></span>
 <span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co">    or is close enough (with the ratio less than POSITIVE_SENTIMENT_CUTOFF)</span></span>
 <span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    pos_similarity, neg_similarity <span class="op">=</span> pos_neg_similarities(champagne_word)</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    pos_similarity, neg_similarity <span class="op">=</span> pos_neg_similarities(champagne_compound_word)</span>
 <span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pos_similarity <span class="op">==</span> <span class="fl">0.0</span> <span class="kw">or</span> neg_similarity <span class="op">==</span> <span class="fl">0.0</span>:</span>
 <span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> default        </span>
 <span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (pos_similarity <span class="op">&gt;</span> neg_similarity) <span class="kw">or</span> <span class="op">\</span></span>
@@ -740,7 +755,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </details>
 </div>
 <p>GLoVe works by translating each word to a series of coordinates, across 200 dimensions. (GLoVe gets those coordinates with machine-learning, deducing that words that occur in similar sentences probably mean similar things.) You can see in this chart that the words we consider positive cluster on the bottom left of the chart, and the ones we consider negative are more towards the top and right.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="19">
 <details>
 <summary>plotting positive and negative words on a t-SNE chart</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -755,19 +770,19 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>sham_words <span class="op">=</span> [<span class="st">"meh"</span>, <span class="st">"sham"</span>, <span class="st">"faux"</span>, <span class="st">"bad"</span>, <span class="st">"mid"</span>]</span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>overrides <span class="op">=</span> {<span class="st">"faux"</span>: <span class="st">"foe"</span>}</span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># make a list of relevant candidate pain/champagne words to be plotted in the t-SNE chart</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>candidate_champagne_words <span class="op">=</span> []</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># make a list of relevant candidate pain words and champagne compound words to be plotted in the t-SNE chart</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>candidate_champagne_compound_words <span class="op">=</span> []</span>
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>candidate_pain_words <span class="op">=</span> []</span>
 <span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sham_word <span class="kw">in</span> [<span class="st">"meh"</span>, <span class="st">"sham"</span>, <span class="st">"faux"</span>, <span class="st">"bad"</span>, <span class="st">"mid"</span>]:</span>
 <span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    sham_syllable <span class="op">=</span> strict_word_pronunciations[overrides.get(sham_word, sham_word)][<span class="dv">0</span>]</span>
 <span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    nouns_starting_with_sham_word <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> candidate_word: find_candidate_champagne_words(candidate_word, sham_syllable<span class="op">=</span>sham_syllable), </span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> candidate_word: find_candidate_champagne_compound_words(candidate_word, sham_syllable<span class="op">=</span>sham_syllable), </span>
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        strict_noun_pronunciations.items()))</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    candidate_champagne_words <span class="op">+=</span> [n <span class="cf">for</span> n, pron <span class="kw">in</span> nouns_starting_with_sham_word]</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    candidate_champagne_compound_words <span class="op">+=</span> [n <span class="cf">for</span> n, pron <span class="kw">in</span> nouns_starting_with_sham_word]</span>
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> candidate_champagne_word, _ <span class="kw">in</span> nouns_starting_with_sham_word:</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> candidate_champagne_prons <span class="kw">in</span> <span class="bu">zip</span>(strict_frequent_noun_pronunciations.get(candidate_champagne_word, []), </span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>                reduced_frequent_noun_pronunciations.get(candidate_champagne_word, [])):</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> candidate_champagne_compound_word, _ <span class="kw">in</span> nouns_starting_with_sham_word:</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> candidate_champagne_prons <span class="kw">in</span> <span class="bu">zip</span>(strict_frequent_noun_pronunciations.get(candidate_champagne_compound_word, []), </span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>                reduced_frequent_noun_pronunciations.get(candidate_champagne_compound_word, [])):</span>
 <span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> champagne_pron <span class="kw">in</span> candidate_champagne_prons:</span>
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> sham_syllable <span class="op">!=</span> champagne_pron[:<span class="bu">len</span>(sham_syllable)] <span class="kw">and</span> <span class="op">\</span></span>
@@ -788,7 +803,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="co"># translating the list of words to a Numpy array of the GLoVe vectors for the words</span></span>
 <span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>PCA_N_COMPONENTS <span class="op">=</span> <span class="dv">21</span></span>
-<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> POSITIVE_WORDS <span class="op">+</span> NEGATIVE_WORDS <span class="op">+</span> candidate_champagne_words <span class="op">+</span> candidate_pain_words</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> POSITIVE_WORDS <span class="op">+</span> NEGATIVE_WORDS <span class="op">+</span> candidate_champagne_compound_words <span class="op">+</span> candidate_pain_words</span>
 <span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> words <span class="cf">if</span> word <span class="kw">in</span> glove_model]</span>
 <span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(words)) <span class="co"># remove duplicates</span></span>
 <span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>vectors <span class="op">=</span> np.array([glove_model[word] <span class="cf">for</span> word <span class="kw">in</span> words] <span class="op">+</span> </span>
@@ -837,13 +852,13 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </section>
 <section id="implementing-our-final-rubric-for-champagne-phrases" class="level2">
 <h2 class="anchored" data-anchor-id="implementing-our-final-rubric-for-champagne-phrases">Implementing our final rubric for <code>champagne phrases</code></h2>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="20">
 <details>
 <summary>def get_best_pain_word(champagne_prons, sham_syllable):</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_best_pain_word(champagne_prons, sham_syllable, quiet<span class="op">=</span><span class="va">True</span>, filter_by_sentiment<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    find the most common word that matches the back half of the champagne word</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    if we can't find one, find one that matches the back half of the champagne word, </span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    find the most common word that matches the back half of the champagne compound word</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    if we can't find one, find one that matches the back half of the champagne compound word, </span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">        but repeating the last phoneme of the sham word </span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">        (e.g. chamonix for my real friends, real money for my sham friends)</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">        this is "gemination" -- we double up the </span></span>
@@ -875,7 +890,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="21">
 <details>
 <summary>def find_champagne_real_pain_phrases(‘faux’):</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
@@ -886,31 +901,31 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    sham_syllable <span class="op">=</span> strict_word_pronunciations[sham_word_override <span class="kw">or</span> sham_word][<span class="dv">0</span>]</span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    nouns_starting_with_sham_word <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> candidate_word: find_candidate_champagne_words(candidate_word, sham_syllable<span class="op">=</span>sham_syllable), </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> candidate_word: find_candidate_champagne_compound_words(candidate_word, sham_syllable<span class="op">=</span>sham_syllable), </span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        strict_noun_pronunciations.items()</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    ))</span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> quiet:</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Here are words (our candidate champagne words) that start with </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sham_syllable))</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Here are words (our candidate champagne compound words) that start with </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sham_syllable))</span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> noun, prons <span class="kw">in</span> nouns_starting_with_sham_word:</span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f" - </span><span class="sc">{</span>noun<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prons<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    champagne_pain_pairs <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> candidate_champagne_word, _ <span class="kw">in</span> nouns_starting_with_sham_word:</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> filter_by_sentiment <span class="kw">and</span> <span class="kw">not</span> is_positive(candidate_champagne_word): <span class="cf">continue</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> candidate_champagne_prons <span class="kw">in</span> <span class="bu">zip</span>(strict_frequent_noun_pronunciations.get(candidate_champagne_word, []), </span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>                reduced_frequent_noun_pronunciations.get(candidate_champagne_word, [])):</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> candidate_champagne_compound_word, _ <span class="kw">in</span> nouns_starting_with_sham_word:</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> filter_by_sentiment <span class="kw">and</span> <span class="kw">not</span> is_positive(candidate_champagne_compound_word): <span class="cf">continue</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> candidate_champagne_prons <span class="kw">in</span> <span class="bu">zip</span>(strict_frequent_noun_pronunciations.get(candidate_champagne_compound_word, []), </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>                reduced_frequent_noun_pronunciations.get(candidate_champagne_compound_word, [])):</span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>            best_pain_word, score <span class="op">=</span> get_best_pain_word(candidate_champagne_prons, sham_syllable, filter_by_sentiment<span class="op">=</span>filter_by_sentiment)</span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> best_pain_word:</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>                champagne_pain_pairs.add((candidate_champagne_word, best_pain_word, score))    </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>                champagne_pain_pairs.add((candidate_champagne_compound_word, best_pain_word, score))    </span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [((<span class="ss">f"</span><span class="sc">{</span>candidate_champagne_word<span class="sc">}</span><span class="ss"> for my </span><span class="sc">{</span>real_word<span class="sc">}</span><span class="ss"> friends, </span><span class="sc">{</span>real_word<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>pain_word<span class="sc">}</span><span class="ss"> for my </span><span class="sc">{</span>sham_word<span class="sc">}</span><span class="ss"> friends"</span>),</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"candidate_champagne_word"</span>: candidate_champagne_word, <span class="st">"real_word"</span>: real_word, <span class="st">"pain_word"</span>: pain_word, <span class="st">"sham_word"</span>: sham_word, <span class="st">"score"</span>: score})</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> candidate_champagne_word, pain_word, score <span class="kw">in</span> <span class="bu">sorted</span>(champagne_pain_pairs, key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">2</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [((<span class="ss">f"</span><span class="sc">{</span>candidate_champagne_compound_word<span class="sc">}</span><span class="ss"> for my </span><span class="sc">{</span>real_word<span class="sc">}</span><span class="ss"> friends, </span><span class="sc">{</span>real_word<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>pain_word<span class="sc">}</span><span class="ss"> for my </span><span class="sc">{</span>sham_word<span class="sc">}</span><span class="ss"> friends"</span>),</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"candidate_champagne_compound_word"</span>: candidate_champagne_compound_word, <span class="st">"real_word"</span>: real_word, <span class="st">"pain_word"</span>: pain_word, <span class="st">"sham_word"</span>: sham_word, <span class="st">"score"</span>: score})</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> candidate_champagne_compound_word, pain_word, score <span class="kw">in</span> <span class="bu">sorted</span>(champagne_pain_pairs, key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">2</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="for-my-faux-sham-mid-meh-and-bad-friends" class="level2">
 <h2 class="anchored" data-anchor-id="for-my-faux-sham-mid-meh-and-bad-friends">____ for my faux, sham, mid, meh and bad friends</h2>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="22">
 <details>
 <summary>Finding champagne phrases if our sham word is … ‘faux’</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SHAM_WORD and SHAM_WORD_OVERRIDE were defined in the "A first try" section</span></span>
@@ -920,46 +935,50 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>focus for my real friends, real cuss for my faux friends
-photos for my real friends, real toes for my faux friends
+photo for my real friends, real toe for my faux friends
+photon for my real friends, real ton for my faux friends
 folkrock for my real friends, real crock for my faux friends
 fomite for my real friends, real might for my faux friends
-focus for my real friends, real kis for my faux friends
-photo for my real friends, real toe for my faux friends
 fomites for my real friends, real mites for my faux friends
+focus for my real friends, real kis for my faux friends
+photos for my real friends, real toes for my faux friends
+photons for my real friends, real tens for my faux friends
 foliage for my real friends, real ledge for my faux friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="23">
 <details>
 <summary>Finding champagne phrases if our sham word is … ‘sham’</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>shamrocks for my real friends, real rocks for my sham friends
-champagne for my real friends, real pain for my sham friends
-shamwow for my real friends, real wow for my sham friends
+<pre><code>champagne for my real friends, real pain for my sham friends
 shamrock for my real friends, real rock for my sham friends
+shamwow for my real friends, real wow for my sham friends
 shampoo for my real friends, real poo for my sham friends
 champagnes for my real friends, real pains for my sham friends
+shamrocks for my real friends, real rocks for my sham friends
+chamonix for my real friends, real money for my sham friends
 chamois for my real friends, real woe for my sham friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="24">
 <details>
 <summary>… if our sham word is ‘mid’</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>midnight for my real friends, real knight for my mid friends
-midrash for my real friends, real rash for my mid friends
+<pre><code>midrash for my real friends, real rash for my mid friends
+midnight for my real friends, real knight for my mid friends
+midpoint for my real friends, real point for my mid friends
 middling for my real friends, real ling for my mid friends
 middle for my real friends, real ell for my mid friends
 medulla for my real friends, real ola for my mid friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="25">
 <details>
 <summary>… if our sham word is ‘bad’</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>):</span>
@@ -969,34 +988,78 @@ medulla for my real friends, real ola for my mid friends</code></pre>
 <pre><code>badges for my real friends, real jaws for my bad friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="26">
 <details>
 <summary>… if our sham word is ‘meh’</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"meh"</span>):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>marriages for my real friends, real ridges for my meh friends
-married for my real friends, real reed for my meh friends
-metric for my real friends, real trick for my meh friends
-method for my real friends, real thud for my meh friends
-marrow for my real friends, real rho for my meh friends
-marriage for my real friends, real ridge for my meh friends
+<pre><code>marrow for my real friends, real rho for my meh friends
+merits for my real friends, real ruts for my meh friends
 medics for my real friends, real dicks for my meh friends
-mesquite for my real friends, real skeet for my meh friends
-medic for my real friends, real dick for my meh friends
-meadows for my real friends, real doze for my meh friends
+marriages for my real friends, real ridges for my meh friends
 merit for my real friends, real rut for my meh friends
+married for my real friends, real reed for my meh friends
+meadows for my real friends, real doze for my meh friends
+method for my real friends, real thud for my meh friends
+metrics for my real friends, real tricks for my meh friends
+metric for my real friends, real trick for my meh friends
+marriage for my real friends, real ridge for my meh friends
+medic for my real friends, real dick for my meh friends
 merits for my real friends, real writs for my meh friends
 meadow for my real friends, real doh for my meh friends
-merits for my real friends, real ruts for my meh friends
-metrics for my real friends, real tricks for my meh friends
-mettle for my real friends, real tall for my meh friends
-metals for my real friends, real tolls for my meh friends
+medal for my real friends, real dahl for my meh friends
 medals for my real friends, real dolls for my meh friends
 message for my real friends, real sedge for my meh friends
+melons for my real friends, real loans for my meh friends
 metal for my real friends, real tall for my meh friends
-medal for my real friends, real dahl for my meh friends</code></pre>
+medico for my real friends, real deco for my meh friends
+metals for my real friends, real tolls for my meh friends</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<details>
+<summary>… if our sham word is ‘barf’</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"barf"</span>):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>barflies for my real friends, real lies for my barf friends</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<details>
+<summary>… if our sham word is ‘crap’</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"crap"</span>):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>crappie for my real friends, real pee for my crap friends</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<details>
+<summary>… if our sham word is ‘ex’</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"ex"</span>):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>extract for my real friends, real tract for my ex friends
+expos for my real friends, real pose for my ex friends
+extraction for my real friends, real traction for my ex friends
+extracts for my real friends, real tracts for my ex friends
+exchequer for my real friends, real checker for my ex friends
+expert for my real friends, real spurt for my ex friends
+exon for my real friends, real son for my ex friends
+experts for my real friends, real spurts for my ex friends
+exports for my real friends, real parts for my ex friends
+exponent for my real friends, real pennant for my ex friends
+excess for my real friends, real oss for my ex friends
+export for my real friends, real part for my ex friends
+exit for my real friends, real aught for my ex friends
+expo for my real friends, real paw for my ex friends
+extras for my real friends, real straws for my ex friends</code></pre>
 </div>
 </div>
 </section>
@@ -1005,26 +1068,26 @@ medal for my real friends, real dahl for my meh friends</code></pre>
 <p>Let’s walk through this step by step.</p>
 <p>Chamonix is a province in France. It has two very different pronunciations in the CMU Pronouncing Dictionary. One Americanized pronunciation, <em>tcham-onyx</em> and a French one like <em>sham-oh-knee</em>.</p>
 <p>(The Americanized pronunciation – which is incorrect – might be meant for automatic speech recognition systems akin to Siri or Alexa that would have to recognize an incorrect pronunciation, rather than for text-to-speech systems. Or it might be that this particular entry in the CMU Pronouncing Dictionary was generated by an unmotivated undergrad without a background in French.)</p>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cmudict.<span class="bu">dict</span>()[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>cmudict.<span class="bu">dict</span>()[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>[['CH', 'AE1', 'M', 'AH0', 'N', 'IH0', 'K', 'S'],
  ['SH', 'AE0', 'M', 'OW0', 'N', 'IY0']]</code></pre>
 </div>
 </div>
 <p>Here’s what the pronunciation looks like with the stresses removed.</p>
-<div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>strict_word_pronunciations[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>strict_word_pronunciations[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>[('CH', 'AE', 'M', 'AH', 'N', 'IH', 'K', 'S'),
  ('SH', 'AE', 'M', 'OW', 'N', 'IY')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sham_word <span class="op">=</span> <span class="st">"sham"</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>sham_syllable <span class="op">=</span> strict_word_pronunciations[sham_word][<span class="dv">0</span>]</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>sham_syllable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sham_word <span class="op">=</span> <span class="st">"sham"</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sham_syllable <span class="op">=</span> strict_word_pronunciations[sham_word][<span class="dv">0</span>]</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>sham_syllable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>('SH', 'AE', 'M')</code></pre>
 </div>
 </div>
@@ -1032,10 +1095,10 @@ medal for my real friends, real dahl for my meh friends</code></pre>
 <p>Now, we’re looking to see if there are any <code>pain word</code>s that are pronounced like any of these options for the pronunciation of the back half of <em>chamonix</em>.</p>
 <p>First, we’re looking for something that matches <code>('OW', 'N', 'IY')</code> or <code>('M', 'OW', 'N', 'IY')</code> – the back half without any vowel reductions. <code>('OW', 'N', 'IY')</code> would be preferable, since it doesn’t require double-up the <code>M</code> in both the <code>sham word</code> (<em>sham</em>) and the <code>pain word</code> (<em>money</em>, in this case).</p>
 <p>Here are those strict pronunciations that we’re looking for.</p>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> strict_word_pronunciations[<span class="st">"chamonix"</span>]:</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> strict_word_pronunciations[<span class="st">"chamonix"</span>]:</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('AH', 'N', 'IH', 'K', 'S')
 ('M', 'AH', 'N', 'IH', 'K', 'S')
@@ -1045,10 +1108,10 @@ medal for my real friends, real dahl for my meh friends</code></pre>
 </div>
 <p>Or, if we can’t find something that matches the strict, we’d look for something that matches the back half of <em>chamonix</em> with reductions.</p>
 <p>Here’s what those reduced pronunciations look like:</p>
-<div class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>]:</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>]:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('AH', 'N', 'AH', 'K', 'S')
 ('M', 'AH', 'N', 'AH', 'K', 'S')
@@ -1057,44 +1120,44 @@ medal for my real friends, real dahl for my meh friends</code></pre>
 </div>
 </div>
 <p>With those eight acceptable pronunciations in mind, we loop through every noun in the English language, to see if any nouns are pronounced that way. We find three!</p>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"money"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"money"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>[('M', 'AH', 'N', 'IY')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"onyx"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"onyx"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>[('AA', 'N', 'IH', 'K', 'S')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"annex"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"annex"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>[('AE', 'N', 'EH', 'K', 'S'), ('AH', 'N', 'EH', 'K', 'S')]</code></pre>
 </div>
 </div>
 <p>None of those three words match either strict pronunciation of <em>chamonix</em>. So we get no result from <code>get_best_pain_word</code> here.</p>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(strict_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(strict_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>(None, None)</code></pre>
 </div>
 </div>
 <p>But they do match the reduced pronunciation of <em>chamonix</em>.</p>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>(None, None)</code></pre>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>('money', 3)</code></pre>
 </div>
 </div>
 <p><em>Money</em> is picked becuase it is the more common than either <em>onyx</em> or <em>annex</em>.</p>
-<div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"money"</span>, <span class="st">"onyx"</span>, <span class="st">"annex"</span>]:</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"frequency of </span><span class="sc">{: &gt;5}</span><span class="st"> is {:,.0f} and it is </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(word, word_frequencies[word], <span class="st">"negative"</span> <span class="cf">if</span> is_negative(word) <span class="cf">else</span> <span class="st">"positive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"money"</span>, <span class="st">"onyx"</span>, <span class="st">"annex"</span>]:</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"frequency of </span><span class="sc">{: &gt;5}</span><span class="st"> is {:,.0f} and it is </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(word, word_frequencies[word], <span class="st">"negative"</span> <span class="cf">if</span> is_negative(word) <span class="cf">else</span> <span class="st">"positive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>frequency of money is 190,205,072 and it is positive
+<pre><code>frequency of money is 190,205,072 and it is negative
 frequency of  onyx is 2,315,135 and it is negative
 frequency of annex is 8,465,905 and it is positive</code></pre>
 </div>
@@ -1102,13 +1165,14 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 </section>
 <section id="future-enhancements" class="level2">
 <h2 class="anchored" data-anchor-id="future-enhancements">Future enhancements</h2>
-<section id="use-a-for-singular-pain-words" class="level3">
-<h3 class="anchored" data-anchor-id="use-a-for-singular-pain-words">Use “a” for singular pain words</h3>
+<section id="use-a-for-pain-words-that-are-count-nouns" class="level3">
+<h3 class="anchored" data-anchor-id="use-a-for-pain-words-that-are-count-nouns">Use “a” for pain words that are count nouns</h3>
 <p>for singular, count nouns, we should add “a” (or “an”) before hand, so it makes a bit more sense.</p>
 <ul>
 <li><em><strong>a</strong> phoney for my real friends, <strong>a</strong> real knee for my faux friends</em></li>
 </ul>
-<p>this would be tricky, because we don’t want to do this for count nouns (like <em>champagne</em>).</p>
+<p>this would be tricky, because we don’t want to do this for mass nouns (like <em>champagne</em>). <a href="https://llds.ling-phil.ox.ac.uk/llds/xmlui/handle/20.500.14106/2469">CUVPlus</a> may be a way to do this, although it regards champagne as a count noun (erroneously, in my view).</p>
+<p>Count nouns are those that you refer to individually. A couch, two laptops, many friends. Mass nouns are referred to regardless of their quantity: coffee, champagne, sand. Some nouns can be both, like <em>squirrel</em>. (<em>I like squirrels</em> means something different from <em>I like squirrel</em>, which implies that you like eating squirrel meat.)</p>
 </section>
 <section id="metrics-for-my-real-friends" class="level3">
 <h3 class="anchored" data-anchor-id="metrics-for-my-real-friends">Metrics for my real friends</h3>
@@ -1118,21 +1182,22 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 <h3 class="anchored" data-anchor-id="better-phonology">Better phonology</h3>
 <p>The vowel reduction logic above is pretty rough. My linguistics education is rusty enough that I can’t write a rule to exclude false-positive matches like <em>medulla for my real friends, real allah for my mid friends</em>.</p>
 <p>Additionally, diphthongs are often close enough to single vowels to count as a rhyme. You could imagine <em>Champlain for my real friends, real playin’ for my sham friends</em> working, but the code as of now wouldn’t be able to equate <em>plain</em> and <em>playin’</em>.</p>
-<div class="cell" data-execution_count="34">
+<p>The matching logic could also allow voiced and unvoiced consonants (that share a place of articulation) to match, which would allow sentences like <em>extremes for my real friends, real dreams for my ex friends</em>.</p>
+<div class="cell" data-execution_count="42">
 <details>
 <summary>regression testing</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression testing</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'photograph'</span> <span class="kw">in</span> phrase <span class="kw">and</span> <span class="st">'autograph'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'shamrocks'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>)])</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assert any(['money' in phrase and 'chamonix' in phrase for phrase, _ in find_champagne_real_pain_phrases("sham")])</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'midrash'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>)])</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'folkrock'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'fomites'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> NSFW_WORDS_ALLOWED:</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression testing</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'photograph'</span> <span class="kw">in</span> phrase <span class="kw">and</span> <span class="st">'autograph'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'shamrocks'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>)])</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assert any(['money' in phrase and 'chamonix' in phrase for phrase, _ in find_champagne_real_pain_phrases("sham")])</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'midrash'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>)])</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'folkrock'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'fomites'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> NSFW_WORDS_ALLOWED:</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1143,23 +1208,23 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 <h4 class="anchored" data-anchor-id="what-about-vader-or-afinn">What about VADER (or AFINN)?</h4>
 <p>VADER is a time-tested dictionary-based sentiment analysis methodology – that is, it’s a big list of hand-picked words rated by how positive or negative they are. The code below is a first stab at using VADER to filter out pain words that aren’t classified as negative. But the VADER lexicon list is relatively small, and many negative words words – like <em>mites</em> – aren’t on it, so many good phrases get incorrectly excluded. (Another sentiment wordlist, AFINN, only contains pain words already present in VADER.)</p>
 <p>We’d only get these five results (which are pretty good, but fewer than we’d want) with the VADER methodology.</p>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="43">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment.vader <span class="im">import</span> SentimentIntensityAnalyzer</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>nltk_download(<span class="st">'vader_lexicon'</span>, quiet<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> SentimentIntensityAnalyzer()</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>overrides <span class="op">=</span> {<span class="st">"faux"</span>: <span class="st">"foe"</span>}</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sham_word <span class="kw">in</span> [<span class="st">"meh"</span>, <span class="st">"sham"</span>, <span class="st">"faux"</span>, <span class="st">"bad"</span>, <span class="st">"mid"</span>]:</span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> champagne_phrase, metadata <span class="kw">in</span> find_champagne_real_pain_phrases(sham_word, sham_word_override<span class="op">=</span>overrides.get(sham_word)):</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> s.lexicon.get(metadata[<span class="st">"pain_word"</span>], <span class="dv">0</span>) <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment.vader <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>nltk_download(<span class="st">'vader_lexicon'</span>, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> SentimentIntensityAnalyzer()</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>overrides <span class="op">=</span> {<span class="st">"faux"</span>: <span class="st">"foe"</span>}</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sham_word <span class="kw">in</span> [<span class="st">"meh"</span>, <span class="st">"sham"</span>, <span class="st">"faux"</span>, <span class="st">"bad"</span>, <span class="st">"mid"</span>]:</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> champagne_phrase, metadata <span class="kw">in</span> find_champagne_real_pain_phrases(sham_word, sham_word_override<span class="op">=</span>overrides.get(sham_word)):</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> s.lexicon.get(metadata[<span class="st">"pain_word"</span>], <span class="dv">0</span>) <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>metric for my real friends, real trick for my meh friends
+<pre><code>metrics for my real friends, real tricks for my meh friends
+metric for my real friends, real trick for my meh friends
 medic for my real friends, real dick for my meh friends
-metrics for my real friends, real tricks for my meh friends
 champagne for my real friends, real pain for my sham friends
 champagnes for my real friends, real pains for my sham friends
 chamois for my real friends, real woe for my sham friends
@@ -1170,38 +1235,39 @@ midrash for my real friends, real rash for my mid friends</code></pre>
 </section>
 <section id="what-pain-words-are-excluded-by-the-existing-methodology" class="level3">
 <h3 class="anchored" data-anchor-id="what-pain-words-are-excluded-by-the-existing-methodology">What pain words are excluded by the existing methodology?</h3>
-<div class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="44">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sham_word <span class="kw">in</span> [<span class="st">"faux"</span>, <span class="st">"sham"</span>, <span class="st">"mid"</span>, <span class="st">"meh"</span>, <span class="st">"bad"</span>]:</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> champagne_phrase, metadata <span class="kw">in</span> find_champagne_real_pain_phrases(sham_word, sham_word_override<span class="op">=</span>overrides.get(sham_word), filter_by_sentiment<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> is_negative(metadata[<span class="st">"pain_word"</span>], default<span class="op">=</span><span class="va">False</span>) <span class="kw">and</span> <span class="op">\</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>           is_positive(metadata[<span class="st">"candidate_champagne_word"</span>], default<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(champagne_phrase)</span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sham_word <span class="kw">in</span> [<span class="st">"faux"</span>, <span class="st">"sham"</span>, <span class="st">"mid"</span>, <span class="st">"meh"</span>, <span class="st">"bad"</span>]:</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> champagne_phrase, metadata <span class="kw">in</span> find_champagne_real_pain_phrases(sham_word, sham_word_override<span class="op">=</span>overrides.get(sham_word), filter_by_sentiment<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> is_negative(metadata[<span class="st">"pain_word"</span>], default<span class="op">=</span><span class="va">False</span>) <span class="kw">and</span> <span class="op">\</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>           is_positive(metadata[<span class="st">"candidate_champagne_compound_word"</span>], default<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(champagne_phrase)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>focusing for my real friends, real kissing for my faux friends
+<pre><code>photons for my real friends, real tonnes for my faux friends
 focuses for my real friends, real kisses for my faux friends
-folklore for my real friends, real clear for my faux friends
 focusing for my real friends, real kissing for my faux friends
 focuses for my real friends, real kisses for my faux friends
+focusing for my real friends, real kissing for my faux friends
+folklore for my real friends, real clear for my faux friends
 
 shamrock for my real friends, real roc for my sham friends
-chamonix for my real friends, real money for my sham friends
 
 midwife for my real friends, real wife for my mid friends
-midday for my real friends, real day for my mid friends
 midwives for my real friends, real wives for my mid friends
 midline for my real friends, real line for my mid friends
-midpoint for my real friends, real point for my mid friends
 midsummer for my real friends, real summer for my mid friends
+midday for my real friends, real day for my mid friends
 
-menus for my real friends, real news for my meh friends
 married for my real friends, real read for my meh friends
+menus for my real friends, real news for my meh friends
+mesquite for my real friends, real skeet for my meh friends
+melons for my real friends, real lawns for my meh friends
+melon for my real friends, real lawn for my meh friends
 meshes for my real friends, real shows for my meh friends
-medico for my real friends, real deco for my meh friends
 
 </code></pre>
 </div>
