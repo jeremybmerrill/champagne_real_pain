@@ -5,3 +5,4 @@ project:
 website:
   google-analytics:
       tracking-id: "G-0K33PQMW1P"
+  open-graph: true
