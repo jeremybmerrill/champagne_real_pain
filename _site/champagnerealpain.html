@@ -177,7 +177,7 @@ gtag('config', 'G-0K33PQMW1P', { 'anonymize_ip': true});
   <li><a href="#metrics-for-my-real-friends" id="toc-metrics-for-my-real-friends" class="nav-link" data-scroll-target="#metrics-for-my-real-friends">Metrics for my real friends</a></li>
   <li><a href="#better-phonology" id="toc-better-phonology" class="nav-link" data-scroll-target="#better-phonology">Better phonology</a></li>
   <li><a href="#improve-positivenegative-classification" id="toc-improve-positivenegative-classification" class="nav-link" data-scroll-target="#improve-positivenegative-classification">Improve positive/negative classification</a></li>
-  <li><a href="#what-pain-words-are-excluded-by-the-existing-methodology" id="toc-what-pain-words-are-excluded-by-the-existing-methodology" class="nav-link" data-scroll-target="#what-pain-words-are-excluded-by-the-existing-methodology">What pain words are excluded by the existing methodology?</a></li>
+  <li><a href="#what-pain-words-are-excluded-by-the-existing-positivenegative-methodology" id="toc-what-pain-words-are-excluded-by-the-existing-positivenegative-methodology" class="nav-link" data-scroll-target="#what-pain-words-are-excluded-by-the-existing-positivenegative-methodology">What pain words are excluded by the existing positive/negative methodology?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -301,7 +301,7 @@ pain:                        [['P', 'EY1', 'N']]</code></pre>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    word_pronunciations[word] <span class="op">=</span> [clean_phonemes(pron) <span class="cf">for</span> pron <span class="kw">in</span> prons]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="48">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>def find_candidate_champagne_compound_words(word_prons):</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Due to an error in the CMU pronouncing dictionary, we have to specify that _faux_ </span></span>
@@ -699,7 +699,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <p>But the concept of negativity that we’re trying to capture here is really complex.</p>
 <p>This attempt uses GLoVe embeddings. For <code>pain words</code>, it accepts only words that are closer to the average embedding of some negative words (like <em>bad</em>, <em>painful</em>) and some handpicked <code>pain words</code> I particularly like (like <code>tricks</code> and <code>cuss</code>) than to the average embedding of some positive words and some handpicked <code>champagne compound words</code>. (Champagne compound words are filtered to be the opposite.)</p>
 <p>It also doesn’t work perfectly.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="13">
 <details>
 <summary>classifying with handpicked positive and negative words</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gensim.downloader <span class="im">as</span> gensim_downloader</span>
@@ -707,17 +707,17 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    glove_model <span class="op">=</span> gensim_downloader.load(<span class="st">"glove-wiki-gigaword-200"</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked positive words and champagne compound words that I like, plus some attempted corrections</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>HANDPICKED_POSITIVE_WORDS <span class="op">=</span> [<span class="st">"positive"</span>, <span class="st">"positivity"</span>, <span class="st">"good"</span>, <span class="st">"healthy"</span>, <span class="st">"safe"</span>, <span class="st">"normal"</span>, <span class="st">"beautiful"</span>, <span class="st">"pea"</span>] <span class="co"># "godly", "biblical"]</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>HANDPICKED_POSITIVE_WORDS <span class="op">=</span> [<span class="st">"positive"</span>, <span class="st">"positivity"</span>, <span class="st">"good"</span>, <span class="st">"healthy"</span>, <span class="st">"safe"</span>, <span class="st">"normal"</span>, <span class="st">"beautiful"</span>, <span class="st">"pea"</span>, <span class="st">"tagine"</span>, <span class="st">"fondue"</span>]</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>HANDPICKED_CHAMPAGNE_COMPOUND_WORDS <span class="op">=</span> [<span class="st">"champagne"</span>, <span class="st">"metrics"</span>, <span class="st">"focus"</span>, <span class="st">"shamrocks"</span>, <span class="st">"photos"</span>, <span class="st">"medics"</span>]</span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>POSITIVE_WORDS <span class="op">=</span> HANDPICKED_POSITIVE_WORDS <span class="op">+</span> HANDPICKED_CHAMPAGNE_COMPOUND_WORDS <span class="op">+</span> [<span class="st">"kisses"</span>, <span class="st">"jewish"</span>, <span class="st">"midrash"</span>]</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked negative words and pain words that I like</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>HANDPICKED_NEGATIVE_WORDS <span class="op">=</span> [<span class="st">"bad"</span>, <span class="st">"badness"</span>, <span class="st">"evil"</span>, <span class="st">"painful"</span>, <span class="st">"dangerous"</span>, <span class="st">"negative"</span>, <span class="st">"weird"</span>, <span class="st">"ugly"</span>]</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>HANDPICKED_PAIN_WORDS <span class="op">=</span> [<span class="st">"pain"</span>, <span class="st">"tricks"</span>, <span class="st">"cuss"</span>, <span class="st">"rocks"</span>, <span class="st">"feet"</span>, <span class="st">"rash"</span>, <span class="st">"dicks"</span>, <span class="st">"croc"</span>, <span class="st">"lenin"</span>, <span class="st">"money"</span>]</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>HANDPICKED_PAIN_WORDS <span class="op">=</span> [<span class="st">"pain"</span>, <span class="st">"tricks"</span>, <span class="st">"cuss"</span>, <span class="st">"rocks"</span>, <span class="st">"feet"</span>, <span class="st">"rash"</span>, <span class="st">"dicks"</span>, <span class="st">"crocodile"</span>, <span class="st">"lenin"</span>, <span class="st">"money"</span>]</span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>NEGATIVE_WORDS <span class="op">=</span> HANDPICKED_NEGATIVE_WORDS <span class="op">+</span> HANDPICKED_PAIN_WORDS</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="14">
 <details>
 <summary>def is_negative(word)</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># handpicked</span></span>
@@ -764,7 +764,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </details>
 </div>
 <p>GLoVe works by translating each word to a series of coordinates, across 200 dimensions. (GLoVe gets those coordinates with machine-learning, deducing that words that occur in similar sentences probably mean similar things.) You can see in this chart that the words we consider positive cluster on the bottom left of the chart, and the ones we consider negative are more towards the top and right.</p>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="15">
 <details>
 <summary>plotting positive and negative words on a t-SNE chart</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -861,7 +861,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </section>
 <section id="implementing-our-final-rubric-for-champagne-phrases" class="level2">
 <h2 class="anchored" data-anchor-id="implementing-our-final-rubric-for-champagne-phrases">Implementing our final rubric for <code>champagne phrases</code></h2>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="16">
 <details>
 <summary>def get_best_pain_word(champagne_prons, sham_syllable):</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_best_pain_word(champagne_prons, sham_syllable, quiet<span class="op">=</span><span class="va">True</span>, filter_by_sentiment<span class="op">=</span><span class="va">True</span>):</span>
@@ -899,7 +899,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="17">
 <details>
 <summary>def find_champagne_real_pain_phrases(‘faux’):</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
@@ -934,7 +934,7 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 </section>
 <section id="for-my-faux-sham-mid-meh-and-bad-friends" class="level2">
 <h2 class="anchored" data-anchor-id="for-my-faux-sham-mid-meh-and-bad-friends">____ for my faux, sham, mid, meh and bad friends</h2>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="18">
 <details>
 <summary>Finding champagne phrases if our sham word is … ‘faux’</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SHAM_WORD and SHAM_WORD_OVERRIDE were defined in the "A first try" section</span></span>
@@ -943,51 +943,54 @@ pronunciation of 'wreck', cleaned ('R', 'AH', 'K')</code></pre>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>focus for my real friends, real cuss for my faux friends
-photo for my real friends, real toe for my faux friends
-photon for my real friends, real ton for my faux friends
-folkrock for my real friends, real crock for my faux friends
+<pre><code>folkrock for my real friends, real croc for my faux friends
 fomite for my real friends, real might for my faux friends
+photo for my real friends, real toe for my faux friends
+photons for my real friends, real tons for my faux friends
 fomites for my real friends, real mites for my faux friends
-focus for my real friends, real kis for my faux friends
+focus for my real friends, real cuss for my faux friends
 photos for my real friends, real toes for my faux friends
-photons for my real friends, real tens for my faux friends
+photon for my real friends, real ton for my faux friends
+focus for my real friends, real kis for my faux friends
+folklore for my real friends, real clear for my faux friends
 foliage for my real friends, real ledge for my faux friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="19">
 <details>
 <summary>Finding champagne phrases if our sham word is … ‘sham’</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>champagne for my real friends, real pain for my sham friends
-shamrock for my real friends, real rock for my sham friends
-shamwow for my real friends, real wow for my sham friends
-shampoo for my real friends, real poo for my sham friends
+<pre><code>shamrocks for my real friends, real rocks for my sham friends
 champagnes for my real friends, real pains for my sham friends
-shamrocks for my real friends, real rocks for my sham friends
+champagne for my real friends, real pain for my sham friends
+shamwow for my real friends, real wow for my sham friends
+shamrock for my real friends, real rock for my sham friends
+shampoo for my real friends, real poo for my sham friends
 chamonix for my real friends, real money for my sham friends
 chamois for my real friends, real woe for my sham friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="20">
 <details>
 <summary>… if our sham word is ‘mid’</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>midrash for my real friends, real rash for my mid friends
-midnight for my real friends, real knight for my mid friends
-midpoint for my real friends, real point for my mid friends
+<pre><code>midline for my real friends, real line for my mid friends
+midrash for my real friends, real rash for my mid friends
 middling for my real friends, real ling for my mid friends
+midpoint for my real friends, real point for my mid friends
+midday for my real friends, real day for my mid friends
+midnight for my real friends, real knight for my mid friends
 middle for my real friends, real ell for my mid friends
 medulla for my real friends, real ola for my mid friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="21">
 <details>
 <summary>… if our sham word is ‘bad’</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>):</span>
@@ -997,7 +1000,7 @@ medulla for my real friends, real ola for my mid friends</code></pre>
 <pre><code>badges for my real friends, real jaws for my bad friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="22">
 <details>
 <summary>… if our sham word is ‘meh’</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"meh"</span>):</span>
@@ -1006,28 +1009,29 @@ medulla for my real friends, real ola for my mid friends</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>marrow for my real friends, real rho for my meh friends
 merits for my real friends, real ruts for my meh friends
-medics for my real friends, real dicks for my meh friends
-marriages for my real friends, real ridges for my meh friends
-merit for my real friends, real rut for my meh friends
-married for my real friends, real reed for my meh friends
-meadows for my real friends, real doze for my meh friends
-method for my real friends, real thud for my meh friends
-metrics for my real friends, real tricks for my meh friends
-metric for my real friends, real trick for my meh friends
-marriage for my real friends, real ridge for my meh friends
 medic for my real friends, real dick for my meh friends
+married for my real friends, real reed for my meh friends
+method for my real friends, real thud for my meh friends
+meadows for my real friends, real doze for my meh friends
 merits for my real friends, real writs for my meh friends
+medics for my real friends, real dicks for my meh friends
 meadow for my real friends, real doh for my meh friends
-medal for my real friends, real dahl for my meh friends
+marriages for my real friends, real ridges for my meh friends
+marriage for my real friends, real ridge for my meh friends
+merit for my real friends, real rut for my meh friends
+metric for my real friends, real trick for my meh friends
+metrics for my real friends, real tricks for my meh friends
+metals for my real friends, real tolls for my meh friends
 medals for my real friends, real dolls for my meh friends
-message for my real friends, real sedge for my meh friends
-melons for my real friends, real loans for my meh friends
-metal for my real friends, real tall for my meh friends
 medico for my real friends, real deco for my meh friends
-metals for my real friends, real tolls for my meh friends</code></pre>
+metal for my real friends, real tall for my meh friends
+melons for my real friends, real loans for my meh friends
+medal for my real friends, real dahl for my meh friends
+meshes for my real friends, real shows for my meh friends
+message for my real friends, real sedge for my meh friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="23">
 <details>
 <summary>… if our sham word is ‘crap’</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"crap"</span>):</span>
@@ -1037,7 +1041,7 @@ metals for my real friends, real tolls for my meh friends</code></pre>
 <pre><code>crappie for my real friends, real pee for my crap friends</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="24">
 <details>
 <summary>… if our sham word is ‘barf’</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"barf"</span>):</span>
@@ -1048,29 +1052,50 @@ metals for my real friends, real tolls for my meh friends</code></pre>
 </div>
 </div>
 <p>(Crappie is a kind of fish.)</p>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="25">
 <details>
 <summary>… if our sham word is ‘ex’</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> champagne_phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"ex"</span>):</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>extract for my real friends, real tract for my ex friends
-expos for my real friends, real pose for my ex friends
+<pre><code>exposition for my real friends, real position for my ex friends
+extract for my real friends, real tract for my ex friends
 extraction for my real friends, real traction for my ex friends
-extracts for my real friends, real tracts for my ex friends
+exile for my real friends, real isle for my ex friends
+expos for my real friends, real pose for my ex friends
 exchequer for my real friends, real checker for my ex friends
+extracts for my real friends, real tracts for my ex friends
 expert for my real friends, real spurt for my ex friends
 exon for my real friends, real son for my ex friends
 experts for my real friends, real spurts for my ex friends
-exports for my real friends, real parts for my ex friends
-exponent for my real friends, real pennant for my ex friends
 excess for my real friends, real oss for my ex friends
-export for my real friends, real part for my ex friends
 exit for my real friends, real aught for my ex friends
+exports for my real friends, real parts for my ex friends
+expositions for my real friends, real possessions for my ex friends
 expo for my real friends, real paw for my ex friends
+export for my real friends, real part for my ex friends
+exponent for my real friends, real pennant for my ex friends
 extras for my real friends, real straws for my ex friends</code></pre>
 </div>
+</div>
+<div class="cell" data-execution_count="27">
+<details>
+<summary>regression testing</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression testing</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'photograph'</span> <span class="kw">in</span> phrase <span class="kw">and</span> <span class="st">'autograph'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'shamrocks'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>)])</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'money'</span> <span class="kw">in</span> phrase <span class="kw">and</span> <span class="st">'chamonix'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>)])</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'midrash'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>)])</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'folkrock'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([metadata[<span class="st">"pain_word"</span>] <span class="op">==</span> <span class="st">"croc"</span> <span class="cf">for</span> phrase, metadata <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'fomites'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> NSFW_WORDS_ALLOWED:</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="a-worked-example" class="level2">
@@ -1078,26 +1103,26 @@ extras for my real friends, real straws for my ex friends</code></pre>
 <p>Let’s walk through this step by step.</p>
 <p>Chamonix is a province in France. It has two very different pronunciations in the CMU Pronouncing Dictionary. One Americanized pronunciation, <em>tcham-onyx</em> and a French one like <em>sham-oh-knee</em>.</p>
 <p>(The Americanized pronunciation – which is incorrect – might be meant for automatic speech recognition systems akin to Siri or Alexa that would have to recognize an incorrect pronunciation, rather than for text-to-speech systems. Or it might be that this particular entry in the CMU Pronouncing Dictionary was generated by an unmotivated undergrad without a background in French.)</p>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>cmudict.<span class="bu">dict</span>()[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>cmudict.<span class="bu">dict</span>()[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>[['CH', 'AE1', 'M', 'AH0', 'N', 'IH0', 'K', 'S'],
  ['SH', 'AE0', 'M', 'OW0', 'N', 'IY0']]</code></pre>
 </div>
 </div>
 <p>Here’s what the pronunciation looks like with the stresses removed.</p>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>strict_word_pronunciations[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>strict_word_pronunciations[<span class="st">"chamonix"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>[('CH', 'AE', 'M', 'AH', 'N', 'IH', 'K', 'S'),
  ('SH', 'AE', 'M', 'OW', 'N', 'IY')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sham_word <span class="op">=</span> <span class="st">"sham"</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sham_syllable <span class="op">=</span> strict_word_pronunciations[sham_word][<span class="dv">0</span>]</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>sham_syllable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sham_word <span class="op">=</span> <span class="st">"sham"</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>sham_syllable <span class="op">=</span> strict_word_pronunciations[sham_word][<span class="dv">0</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>sham_syllable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>('SH', 'AE', 'M')</code></pre>
 </div>
 </div>
@@ -1105,10 +1130,10 @@ extras for my real friends, real straws for my ex friends</code></pre>
 <p>Now, we’re looking to see if there are any <code>pain word</code>s that are pronounced like any of these options for the pronunciation of the back half of <em>chamonix</em>.</p>
 <p>First, we’re looking for something that matches <code>('OW', 'N', 'IY')</code> or <code>('M', 'OW', 'N', 'IY')</code> – the back half without any vowel reductions. <code>('OW', 'N', 'IY')</code> would be preferable, since it doesn’t require double-up the <code>M</code> in both the <code>sham word</code> (<em>sham</em>) and the <code>pain word</code> (<em>money</em>, in this case).</p>
 <p>Here are those strict pronunciations that we’re looking for.</p>
-<div class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> strict_word_pronunciations[<span class="st">"chamonix"</span>]:</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> strict_word_pronunciations[<span class="st">"chamonix"</span>]:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('AH', 'N', 'IH', 'K', 'S')
 ('M', 'AH', 'N', 'IH', 'K', 'S')
@@ -1118,10 +1143,10 @@ extras for my real friends, real straws for my ex friends</code></pre>
 </div>
 <p>Or, if we can’t find something that matches the strict, we’d look for something that matches the back half of <em>chamonix</em> with reductions.</p>
 <p>Here’s what those reduced pronunciations look like:</p>
-<div class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>]:</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> chamonix_pronunciation <span class="kw">in</span> reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>]:</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable):])</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(chamonix_pronunciation[<span class="bu">len</span>(sham_syllable)<span class="op">-</span><span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('AH', 'N', 'AH', 'K', 'S')
 ('M', 'AH', 'N', 'AH', 'K', 'S')
@@ -1130,42 +1155,42 @@ extras for my real friends, real straws for my ex friends</code></pre>
 </div>
 </div>
 <p>With those eight acceptable pronunciations in mind, we loop through every noun in the English language, to see if any nouns are pronounced that way. We find three!</p>
-<div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"money"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"money"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>[('M', 'AH', 'N', 'IY')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"onyx"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"onyx"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>[('AA', 'N', 'IH', 'K', 'S')]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"annex"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>strict_noun_pronunciations[<span class="st">"annex"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>[('AE', 'N', 'EH', 'K', 'S'), ('AH', 'N', 'EH', 'K', 'S')]</code></pre>
 </div>
 </div>
 <p>None of those three words match either strict pronunciation of <em>chamonix</em>. So we get no result from <code>get_best_pain_word</code> here.</p>
-<div class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(strict_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(strict_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>(None, None)</code></pre>
 </div>
 </div>
 <p>But they do match the reduced pronunciation of <em>chamonix</em>.</p>
-<div class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>get_best_pain_word(reduced_frequent_noun_pronunciations[<span class="st">"chamonix"</span>], strict_noun_pronunciations[<span class="st">"sham"</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>('money', 3)</code></pre>
 </div>
 </div>
 <p><em>Money</em> is picked becuase it is the more common than either <em>onyx</em> or <em>annex</em>.</p>
-<div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"money"</span>, <span class="st">"onyx"</span>, <span class="st">"annex"</span>]:</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"frequency of </span><span class="sc">{: &gt;5}</span><span class="st"> is {:,.0f} and it is </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(word, word_frequencies[word], <span class="st">"negative"</span> <span class="cf">if</span> is_negative(word) <span class="cf">else</span> <span class="st">"positive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"money"</span>, <span class="st">"onyx"</span>, <span class="st">"annex"</span>]:</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"frequency of </span><span class="sc">{: &gt;5}</span><span class="st"> is {:,.0f} and it is </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(word, word_frequencies[word], <span class="st">"negative"</span> <span class="cf">if</span> is_negative(word) <span class="cf">else</span> <span class="st">"positive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>frequency of money is 190,205,072 and it is negative
 frequency of  onyx is 2,315,135 and it is negative
@@ -1193,23 +1218,6 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 <p>The vowel reduction logic above is pretty rough. My linguistics education is rusty enough that I can’t write a rule to exclude false-positive matches like <em>medulla for my real friends, real allah for my mid friends</em>.</p>
 <p>Additionally, diphthongs are often close enough to single vowels to count as a rhyme. You could imagine <em>Champlain for my real friends, real playin’ for my sham friends</em> working, but the code as of now wouldn’t be able to equate <em>plain</em> and <em>playin’</em>.</p>
 <p>The matching logic could also allow voiced and unvoiced consonants (that share a place of articulation) to match, which would allow sentences like <em>extremes for my real friends, real dreams for my ex friends</em>.</p>
-<div class="cell" data-execution_count="42">
-<details>
-<summary>regression testing</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression testing</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'photograph'</span> <span class="kw">in</span> phrase <span class="kw">and</span> <span class="st">'autograph'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'shamrocks'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"sham"</span>)])</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assert any(['money' in phrase and 'chamonix' in phrase for phrase, _ in find_champagne_real_pain_phrases("sham")])</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'midrash'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"mid"</span>)])</span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'folkrock'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'fomites'</span> <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"faux"</span>, sham_word_override<span class="op">=</span><span class="st">"foe"</span>)])</span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> NSFW_WORDS_ALLOWED:</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> <span class="bu">any</span>([<span class="st">'badges'</span> <span class="kw">in</span> phrase <span class="kw">and</span> unmask_nsfw(<span class="st">'aml6eg=='</span>) <span class="kw">in</span> phrase <span class="cf">for</span> phrase, _ <span class="kw">in</span> find_champagne_real_pain_phrases(<span class="st">"bad"</span>)])</span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 </section>
 <section id="improve-positivenegative-classification" class="level3">
 <h3 class="anchored" data-anchor-id="improve-positivenegative-classification">Improve positive/negative classification</h3>
@@ -1218,7 +1226,7 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 <h4 class="anchored" data-anchor-id="what-about-vader-or-afinn">What about VADER (or AFINN)?</h4>
 <p>VADER is a time-tested dictionary-based sentiment analysis methodology – that is, it’s a big list of hand-picked words rated by how positive or negative they are. The code below is a first stab at using VADER to filter out pain words that aren’t classified as negative. But the VADER lexicon list is relatively small, and many negative words words – like <em>mites</em> – aren’t on it, so many good phrases get incorrectly excluded. (Another sentiment wordlist, AFINN, only contains pain words already present in VADER.)</p>
 <p>We’d only get these five results (which are pretty good, but fewer than we’d want) with the VADER methodology.</p>
-<div class="cell" data-execution_count="43">
+<div class="cell" data-execution_count="39">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment.vader <span class="im">import</span> SentimentIntensityAnalyzer</span>
@@ -1232,20 +1240,20 @@ frequency of annex is 8,465,905 and it is positive</code></pre>
 <span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(champagne_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>metrics for my real friends, real tricks for my meh friends
+<pre><code>medic for my real friends, real dick for my meh friends
 metric for my real friends, real trick for my meh friends
-medic for my real friends, real dick for my meh friends
-champagne for my real friends, real pain for my sham friends
+metrics for my real friends, real tricks for my meh friends
 champagnes for my real friends, real pains for my sham friends
+champagne for my real friends, real pain for my sham friends
 chamois for my real friends, real woe for my sham friends
 midrash for my real friends, real rash for my mid friends</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="what-pain-words-are-excluded-by-the-existing-methodology" class="level3">
-<h3 class="anchored" data-anchor-id="what-pain-words-are-excluded-by-the-existing-methodology">What pain words are excluded by the existing methodology?</h3>
-<div class="cell" data-execution_count="44">
+<section id="what-pain-words-are-excluded-by-the-existing-positivenegative-methodology" class="level3">
+<h3 class="anchored" data-anchor-id="what-pain-words-are-excluded-by-the-existing-positivenegative-methodology">What pain words are excluded by the existing positive/negative methodology?</h3>
+<div class="cell" data-execution_count="40">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1257,27 +1265,23 @@ midrash for my real friends, real rash for my mid friends</code></pre>
 <span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>photons for my real friends, real tonnes for my faux friends
+<pre><code>focuses for my real friends, real kisses for my faux friends
+focusing for my real friends, real kissing for my faux friends
+photons for my real friends, real tonnes for my faux friends
 focuses for my real friends, real kisses for my faux friends
 focusing for my real friends, real kissing for my faux friends
-focuses for my real friends, real kisses for my faux friends
-focusing for my real friends, real kissing for my faux friends
-folklore for my real friends, real clear for my faux friends
 
 shamrock for my real friends, real roc for my sham friends
 
 midwife for my real friends, real wife for my mid friends
 midwives for my real friends, real wives for my mid friends
-midline for my real friends, real line for my mid friends
 midsummer for my real friends, real summer for my mid friends
-midday for my real friends, real day for my mid friends
 
 married for my real friends, real read for my meh friends
 menus for my real friends, real news for my meh friends
 mesquite for my real friends, real skeet for my meh friends
 melons for my real friends, real lawns for my meh friends
 melon for my real friends, real lawn for my meh friends
-meshes for my real friends, real shows for my meh friends
 
 </code></pre>
 </div>
