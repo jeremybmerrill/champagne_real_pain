@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jeremy B. Merrill">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-09-25">
 
 <title>Champagne for my real friends</title>
 <style>
@@ -138,7 +138,7 @@ gtag('config', 'G-0K33PQMW1P', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 22, 2023</p>
+        <p class="date">September 25, 2023</p>
       </div>
     </div>
     
@@ -272,7 +272,7 @@ pronunciation of pain is [['P', 'EY1', 'N']]</code></pre>
 </section>
 <section id="an-initial-rubric-for-a-champagne-phrase" class="level2">
 <h2 class="anchored" data-anchor-id="an-initial-rubric-for-a-champagne-phrase">An initial rubric for a <code>champagne phrase</code></h2>
-<p>A <code>champagne phrase</code> is <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where<code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne compound word</code>.</p>
+<p>A <code>champagne phrase</code> is (preliminarily) defined as <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where<code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne compound word</code>.</p>
 <p>We’ll revise this later, but this is enough to try to get started with generating <code>champagne phrases.</code></p>
 </section>
 <section id="implementing-our-initial-rubric" class="level2">
@@ -415,9 +415,14 @@ foale for my real friends, real ohl for my faux friends
 <li>overprecise vowel matches mean we miss some slant rhymes that should be ok.</li>
 <li>some of the <code>pain words</code> are actually positive; it doesn’t make sense to wish a real kiss for your faux friends.</li>
 </ul>
-<p>A <code>champagne phrase</code> is <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where<code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne compound word</code>.</p>
-<p>We can revise that to:</p>
-<p>A <code>champagne phrase</code> is <em><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</em>, where a <code>sham word</code> is an adjective and a <code>pain word</code> is a frequent, common noun with a negative meaning that, when their pronunciations are combined (with perhaps a bit of phonological fudging), make a <code>champagne compound word</code> with positive or neutral meaning.</p>
+<p>Our initial rubric was:</p>
+<blockquote class="blockquote">
+<p>A <code>champagne phrase</code> is (preliminarily) defined as <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where<code>sham word</code> is an adjective and a <code>pain word</code> is a word that, when their pronunciations are combined, make a <code>champagne compound word</code>.</p>
+</blockquote>
+<p>We can revise that for a final rubric:</p>
+<blockquote class="blockquote">
+<p>A <code>champagne phrase</code> is defined as <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where a <code>sham word</code> is an adjective and a <code>pain word</code> is a frequent, common noun with a negative meaning that, when their pronunciations are combined (with perhaps a bit of phonological fudging), make a <code>champagne compound word</code> with positive or neutral meaning.</p>
+</blockquote>
 <p>We’ll only count one champagne phrase per pronunciation of a <code>champagne compound word</code>.</p>
 <p>Here’s our implementation.</p>
 <section id="pain-words-and-champagne-compound-words-have-to-be-nouns" class="level3">
