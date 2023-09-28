@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jeremy B. Merrill">
-<meta name="dcterms.date" content="2023-09-25">
+<meta name="dcterms.date" content="2023-09-28">
 
 <title>Champagne for my real friends</title>
 <style>
@@ -138,7 +138,7 @@ gtag('config', 'G-0K33PQMW1P', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 25, 2023</p>
+        <p class="date">September 28, 2023</p>
       </div>
     </div>
     
@@ -221,6 +221,7 @@ Click for a sample of the final output (spoiler alert!)
 </div>
 </div>
 </div>
+<p>(<strong>Update:</strong> turns out XKCD did <a href="https://xkcd.com/1645/">a comic on a similar theme</a> – apparently with a very similar impetus – a few years ago. )</p>
 <section id="but-how-do-computers-know-how-words-sound" class="level2">
 <h2 class="anchored" data-anchor-id="but-how-do-computers-know-how-words-sound">But how do computers know how words sound?</h2>
 <p>The <a href="www.speech.cs.cmu.edu/cgi-bin/cmudict">CMU Pronouncing Dictionary</a> is a classical natural language processing resource that lists words and their pronunciations. It’s thirty years old! It was compiled by humans who painstakingly listed each word’s pronunciations – no neural nets or artificial intelligence here.</p>
@@ -424,6 +425,24 @@ foale for my real friends, real ohl for my faux friends
 <p>A <code>champagne phrase</code> is defined as <strong><code>champagne compound word</code> for my real friends, real <code>pain word</code> for my <code>sham word</code> friends</strong>, where a <code>sham word</code> is an adjective and a <code>pain word</code> is a frequent, common noun with a negative meaning that, when their pronunciations are combined (with perhaps a bit of phonological fudging), make a <code>champagne compound word</code> with positive or neutral meaning.</p>
 </blockquote>
 <p>We’ll only count one champagne phrase per pronunciation of a <code>champagne compound word</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+About those XKCD champagne phrases (“toasts”)…
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>After I published this write-up, several people pointed out that XKCD did <a href="https://xkcd.com/1645/">a comic on a similar theme</a> – apparently with a very similar impetus – a few years ago. Several of the champagne phrases (which Randall Munroe calls “toasts”, which is pretty good, I wish I had thought of it!) fit our rubric, like <em>ladybugs for my real friends, real bugs for my lady friends</em>, because ladybugs are pretty and harmless, but most other bugs are disliked.</p>
+<p>But others don’t, particularly in terms of negative/positive sentiment. – like <em>petticoats for my real friends, real coats for my petty friends</em>, where the <code>pain word</code> <em>coats</em> isn’t negative – which just goes to show that my rubric here isn’t the only way to analyze the phenomenon.</p>
+<p>Likewise, <em>single-payer for my real friends, RealPlayer for my single friends</em> is pretty good, but if you’re wishing RealPlayer on someone, they’re not your friend, regardless of their relationship status.</p>
+</div>
+</div>
+</div>
 <p>Here’s our implementation.</p>
 <section id="pain-words-and-champagne-compound-words-have-to-be-nouns" class="level3">
 <h3 class="anchored" data-anchor-id="pain-words-and-champagne-compound-words-have-to-be-nouns">Pain words and champagne compound words have to be nouns</h3>
@@ -513,7 +532,7 @@ foale for my real friends, real ohl for my faux friends
 <p>We also don’t care about all the vowel distinctions that the dictionary uses. We’ll implement “vowel reductions” that mirror some of the ways American English speakers can change vowels in fast or casual speech, so that near-identical words are okay.</p>
 <p>Also we ignore very uncommon words and non-nouns, which don’t fit in the joke format.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -522,7 +541,7 @@ What are these vowels?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="10">
 <details>
